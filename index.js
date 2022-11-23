@@ -3,7 +3,7 @@ const cors = require('cors');
 
 const port = 3000;
 const app = express();
-const route = require('./src/routes/herois.routes');
+const router = require('./src/routes/herois.routes');
 
 app.use(
   cors({
@@ -14,9 +14,7 @@ app.use(
 
 app.use(express.json());
 
-
-
-app.use('/herois', route);
+app.use('/herois', router);
 
 app.listen(port, () => {
   console.log(`Server in port http://localhost:${port}`);
